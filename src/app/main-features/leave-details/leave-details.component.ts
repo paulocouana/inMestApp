@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { HttpParams } from '@angular/common/http';
+import { LeaveService } from '../../services/leave.service';
 
 @Component({
   selector: 'app-leave-details',
@@ -13,13 +14,24 @@ import { HttpParams } from '@angular/common/http';
 export class LeaveDetailsComponent implements OnInit{
   leaveId = '';
   createdBy = '';
-  constructor(private route: ActivatedRoute){}
+  leave: any;
+  constructor(
+    private route: ActivatedRoute,
+    private leaveService: LeaveService
+    ){}
+
   ngOnInit(): void {
     this.route.params.subscribe(param =>{
       this.leaveId = param["id"];
       this.createdBy = param["name"];
     })
-    //throw new Error('Method not implemented.');
   }
 
+  //We will call this function when the url changes
+  getMyLeaveById(id: number){
+    this.leaveService.getLeaveById(id).subscribe(response => {
+      this.leave = response;
+      this.getMyLeaveById(parseInt(this.leaveId));
+    });
+  }
 }
