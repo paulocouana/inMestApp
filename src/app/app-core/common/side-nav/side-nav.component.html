@@ -1,0 +1,35 @@
+<div class="side-nav">
+    <img class="logo" src="" alt="">
+    <ul class="menu">
+        <li class="menu-active"><!-- The class defines the Menu active -->
+            <a [routerLink]="['/']" [routerLinkActive]="'menu-active'" [routerLinkActiveOptions]="{exact:true}">
+                <i class="fa fa-dashboard" aria-hidden="true"></i><!--Is going to be used a pseudo element-->
+                Dashboard
+            </a> 
+        </li>
+        <li>
+            <a [routerLink]="['/']" [routerLinkActive]="'menu-active'" [routerLinkActiveOptions]="{exact:true}">
+                <i class="fa fa-calendar-check-o"></i>
+                Attendance
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="['/leave']" [routerLinkActive]="'menu-active'" [routerLinkActiveOptions]="{exact:true}">
+                <i class="fa fa-bed"></i>
+                Leave
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="['/']" [routerLinkActive]="'menu-active'" [routerLinkActiveOptions]="{exact:true}">
+                <i class="fa fa-bar-chart"></i>
+                Analytics
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="['/users']" [routerLinkActive]="'menu-active'" [routerLinkActiveOptions]="{exact:true}">
+                <i class="fa fa-users"></i>
+                Users
+            </a>
+        </li>
+    </ul>
+</div>

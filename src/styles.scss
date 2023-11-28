@@ -1,0 +1,95 @@
+/* You can add global styles to this file, and also import other style files */
+
+.relative-pos{
+    position: relative;
+    background-color: black;
+    height: 150vh;
+    width: 300px;
+    left: 30px;
+    right: 30px;
+    top: 30px;
+    color: white;
+    z-index: 1;
+    
+}
+.absolute-pos{
+    position: absolute;
+    background-color: orange;
+    bottom: 0px;
+            
+}
+.fixed-pos{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: orange;
+    color: blue;
+    padding: 1rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.sticky-pos{
+    position: sticky;
+    background-color: #6e6e6e;
+    top: 3px;
+    list-style-type: none;
+    padding-left: 0px;
+    display: flex;
+    justify-content: flex-end;
+    color: #fff;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    z-index: 10; /*coloca a nossa janela por trás do barra de menu*/
+
+}
+
+.sticky-pos > li{
+    margin-left: 1rem; /*aligns all the "li" with the margin left*/
+}
+body{
+    margin: 0px;
+}
+.logo {
+    width: 60px; /*sets the logo to 80 pixels*/
+}
+.goo-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+.goo-wrapper .side-nav{
+    width: 250px;
+    height: 100vh; /* vh - view height */
+}
+.goo-wrapper .side-nav .menu{
+    list-style-type: none;
+    padding-left: 10px;
+}
+.goo-wrapper .side-nav .menu a{//We changed from li to a anchor in order to apply the style we defined on
+    color: #00C8C8;
+    padding: 10px 10px; /*it sets the padding to top and bottom and padding - left and right*/
+    display: flex; /*we are setting the "li" elements in the same positions with the icons*/
+    align-items: center; /*align the "li" items in the center position */
+    border-radius: 25px;/*sets all the menu items with 40 pixels radius*/
+    cursor: pointer;/*adds the pointer to each item when is active*/
+    margin-bottom: 5px;/*we are setting the margin between the list items to be separeted by 5 pixels*/
+
+}
+.goo-wrapper .side-nav .menu .menu-icon{
+    width: 25px;
+    margin-right: 10px;
+}
+.goo-wrapper .side-nav .menu a:hover{/*it defines action which is to hover when the mouse is pointing to an item*/
+    background-color: #00C8C8;/*we are setting the color to change when the item is active*/
+    color: #fff;/*the color should change to white when te item is active*/
+}
+.goo-wrapper .side-nav .menu .menu-active{
+    background-color: #00C8C8;/*we are setting the color to change to #00C8C8 when the item is active*/
+    color: #fff;/*the color should change to white when te item is active*/
+}
